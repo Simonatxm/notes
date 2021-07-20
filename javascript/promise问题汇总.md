@@ -31,7 +31,7 @@
 （3）resolve函数和reject函数都将当前Promise状态改为完成，并将异步结果，或者错误结果当做参数返回
 
  (4) Promise.resolve(value)
- 
+
 （6）promise 对象的构造函数只会调用一次，then 方法和 catch 方法都能多次调用，但一旦有了确定的结果，再次调用就会直接返回结果
 
 题目 1
@@ -101,3 +101,14 @@ p1().then((arg) => {
 });
 console.log(10);
 ```
+7. promise 基本原理
+
+（1） Promise 是一个类，在执行这个类的时候会传入一个执行器，这个执行器会立即执行
+
+（2）Promise 会有三种状态：pending,fulfilled,rejected
+
+ (3) 状态只能有pending=>fulfilled,pending=>rejected,一旦发生改变，便不可二次修改
+
+（4）Promise 中使用resolve 和 reject来更改状态
+
+（5）then 方法内部但事情就是状态判断
