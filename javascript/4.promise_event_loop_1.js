@@ -25,18 +25,18 @@
 // });
 
 // 题目1
-const promise = new Promise((resolve, reject) => {
-    console.log(1);
-    // resolve();
-    console.log(2);
-    reject('error');
-})
+// const promise = new Promise((resolve, reject) => {
+//     console.log(1);
+//     // resolve();
+//     console.log(2);
+//     reject('error');
+// })
 
-promise.then(() => {
-    console.log(3);
-}).catch(e => console.log(e))
+// promise.then(() => {
+//     console.log(3);
+// }).catch(e => console.log(e))
 
-console.log(4);
+// console.log(4);
 
  
 
@@ -85,3 +85,32 @@ console.log(4);
 // 	console.log(arg);
 // });
 // console.log(10);
+
+
+console.log('script start')
+
+async function async1() {
+  await async2()
+  console.log('async1 end')
+}
+async function async2() {
+  console.log('async2 end') 
+}
+async1()
+
+setTimeout(function() {
+  console.log('setTimeout')
+}, 0)
+
+new Promise(resolve => {
+  console.log('Promise')
+  resolve()
+})
+  .then(function() {
+    console.log('promise1')
+  })
+  .then(function() {
+    console.log('promise2')
+  })
+
+console.log('script end')
