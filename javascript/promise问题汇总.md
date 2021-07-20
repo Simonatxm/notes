@@ -25,9 +25,13 @@
 6. promise 基本规则
 
 （1）promise 构造函数会立即执行，而 promise.then() 内部的代码在当次事件循环的结尾立即执行（微任务）
-(2) promise 的状态一旦由等待 pending 变为成功 fulfiled 或者失败 rejected。那么当前 promise 被标记为完成，后面则不会再改变该状态。
+
+ (2) promise 的状态一旦由等待 pending 变为成功 fulfiled 或者失败 rejected。那么当前 promise 被标记为完成，后面则不会再改变该状态。
+
 （3）resolve函数和reject函数都将当前Promise状态改为完成，并将异步结果，或者错误结果当做参数返回
+
  (4) Promise.resolve(value)
+ 
 （6）promise 对象的构造函数只会调用一次，then 方法和 catch 方法都能多次调用，但一旦有了确定的结果，再次调用就会直接返回结果
 
 题目 1
