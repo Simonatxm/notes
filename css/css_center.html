@@ -26,15 +26,51 @@
     }
 
     /* 定位1  */
-    .box{
+    .body{
+        position: relative;
+    }
+    /* .box{
         position: absolute;
         top: 50%;
         left: 50%;
         margin-top: -25px;
         margin-left: -50px;
-    }
+    } */
+
+    /* .box{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    } */
+
+    /* 能实现兼容性不好 */
+    /* .box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    } */
+
+    /* body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
 </style>
 <body>
-    <div class="box">垂直居中</div>
+    <div class="box" id="box">垂直居中</div>
+    <script>
+    let HTML = document.documentElement,
+        winW = HTML.clientWidth,
+        winH = HTML.clientHeight,
+        boxW = box.offsetWidth,
+        boxH = box.offsetHeight;
+        box.style.position = "absolute"; 
+        box.style.top = (winH - boxH) / 2 + 'px';
+        box.style.left = (winW - boxW) / 2 + 'px';
+    </script>
 </body>
 </html>
