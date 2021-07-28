@@ -23,7 +23,6 @@ console.log(tempShow());
 add();
 console.log(tempShow());
 
-
 var name = "The window";
 var object = {
     name: "my object",
